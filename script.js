@@ -1,378 +1,974 @@
 /* =========================================================
-   CROCHET Studio - Complete Website JavaScript
+   CROCHET STUDIO
+   FINAL JAVASCRIPT
+   =========================================================
+
+   IMPORTANT:
+
+   The PRODUCT CATALOGUE is at the top.
+
+   When adding future products, you normally only need
+   to edit that section.
+
    ========================================================= */
 
-/* =========================
-   BUSINESS SETTINGS
-   ========================= */
+
+/* =========================================================
+   WEBSITE SETTINGS
+   ========================================================= */
 
 const BRAND = "CROCHET Studio";
 
 /*
-  Replace this with the actual WhatsApp number.
-  Format: country code + number, without + or spaces.
-  Example: 919876543210
+   Replace this with the actual WhatsApp number.
+
+   IMPORTANT:
+   Include country code.
+   India = 91
+
+   Example:
+   919876543210
 */
-const whatsappNumber = "8452-942-656";
+const WHATSAPP_NUMBER = "918452942656";
+
 
 /*
-  Replace with the actual Instagram profile.
+   Replace this with the actual Instagram profile.
 */
-const instagramURL = "https://www.instagram.com/crochet__.studio?stkn=OXQ3ejV2dGRzajhv";
+const INSTAGRAM_URL = "https://www.instagram.com/crochet__.studio?stkn=OXQ3ejV2dGRzajhv";
 
 
-/* =========================
-   PRODUCTS
-   ========================= */
+/* =========================================================
+   PRODUCT CATALOGUE
+   =========================================================
+
+   ADD / EDIT PRODUCTS ONLY HERE.
+
+   MULTIPLE IMAGES ARE SUPPORTED.
+
+   Example:
+
+   images: [
+       "assets/images/product.jpg",
+       "assets/images/product-side.jpg",
+       "assets/images/product-closeup.jpg"
+   ]
+
+   availability:
+       true  = available
+       false = unavailable
+
+   ========================================================= */
 
 const products = [
-  {
-    id: "bouquet",
-    name: "Crochet Flower Bouquet",
-    category: "Crochet Bouquet",
-    collection: "Bestsellers",
-    price: 599,
-    description: "A forever bouquet, handmade with love.",
-    image:
-      "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=700"
-  },
+
+  /* =======================================================
+     BOUQUETS
+     ======================================================= */
 
   {
-    id: "bag",
-    name: "Handmade Crochet Bag",
-    category: "Accessories",
-    collection: "Season Special",
-    price: 799,
-    description: "A cute everyday handmade companion.",
-    image:
-      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=700"
+    id: "pink-dream-bouquet",
+    name: "Pink Dream Bouquet",
+    price: 180,
+    category: "Single Flower Bouquets",
+
+    description:
+      "A sweet handmade crochet bouquet, thoughtfully created to bring a little colour and warmth to someone's day.",
+
+    images: [
+      "assets/images/pink-dream-bouquet.jpg"
+    ],
+
+    customization: [
+      "Choose your preferred colour",
+      "Add a personalised note",
+      "Custom wrapping available"
+    ],
+
+    availability: true,
+    collection: "Bestsellers"
   },
 
-  {
-    id: "gift",
-    name: "Cute Crochet Gift",
-    category: "Gifts",
-    collection: "Premium Bouquet",
-    price: 399,
-    description: "A thoughtful little handmade surprise.",
-    image:
-      "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=700"
-  },
 
   {
-    id: "rose",
-    name: "Crochet Rose",
-    category: "Single Flower",
-    collection: "Bestsellers",
-    price: 199,
-    description: "A handmade rose that stays beautiful forever.",
-    image:
-      "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=700"
+    id: "golden-glow-bouquet",
+    name: "Golden Glow Bouquet",
+    price: 460,
+    category: "Single Flower Bouquets",
+
+    description:
+      "A warm handmade crochet bouquet with beautiful golden floral details, made to brighten any occasion.",
+
+    images: [
+      "assets/images/golden-glow-bouquet.jpg"
+    ],
+
+    customization: [
+      "Choose flower colours",
+      "Add a personalised note",
+      "Custom wrapping available"
+    ],
+
+    availability: true,
   },
 
-  {
-    id: "keychain",
-    name: "Crochet Keychain",
-    category: "Crochet Keychain",
-    collection: "Season Special",
-    price: 249,
-    description: "A tiny handmade companion for your everyday adventures.",
-    image:
-      "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=700"
-  },
 
   {
-    id: "pot",
-    name: "Crochet Flower Pot",
-    category: "Crochet Flower Pot",
-    collection: "Premium Bouquet",
-    price: 449,
-    description: "A charming handmade flower arrangement for your space.",
-    image:
-      "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=700"
-  }
+    id: "whimsical-bloom-bouquet",
+    name: "Whimsical Bloom Bouquet",
+    price: 1500,
+    category: "Bouquets",
+
+    description:
+      "A handmade crochet bouquet A beautiful handmade crochet bouquet featuring 1 lily, 3 tulips, 3 daisies, and 4 roses. Perfect for birthdays, anniversaries, or a thoughtful gift for someone special. Each flower is lovingly crafted to create a charming, long-lasting keepsake.",
+
+    images: [
+      "assets/images/whimsical-bloom-bouquet.jpg"
+    ],
+
+    customization: [
+      "Choose flower combination",
+      "Choose colour palette",
+      "Add a personalised note",
+      "Custom wrapping available"
+    ],
+
+    availability: true,
+    collection: "Premium Bouquet"
+  },
+
+
+  {
+    id: "sunshine-garden-bouquet",
+    name: "Sunshine Garden Bouquet",
+    price: 800,
+    category: "Bouquets",
+
+    description:
+      "A charming handmade crochet bouquet featuring 1 XL sunflower, 1 daisy, and 3 tulips. Perfect for birthdays, special occasions, or a thoughtful gift for someone special. Each flower is carefully crafted with love to create a beautiful, long-lasting keepsake.",
+
+    images: [
+      "assets/images/sunshine-garden-bouquet.jpg"
+    ],
+
+    customization: [
+      "Choose flower colours",
+      "Choose wrapping style",
+      "Add a personalised note"
+    ],
+
+    availability: true,
+    collection: "Premium Bouquet"
+  },
+
+
+  {
+    id: "sweet-heart-bloom-bouquet",
+    name: "Sweet Heart Bloom Bouquet",
+    price: 350,
+    category: "Bouquets",
+
+    description:
+      "A charming handmade crochet bouquet featuring sweet floral details and heart-inspired elements.",
+
+    images: [
+      "assets/images/sweetheart-bloom-bouquet.jpg",
+      "assets/images/sweetheart-bloom2-bouquet.jpg",
+    ],
+
+    customization: [
+      "Choose flower colours",
+      "Add a personalised note",
+      "Custom wrapping available"
+    ],
+
+    availability: true,
+    collection: "Bestsellers"
+  },
+
+
+  {
+    id: "sunshine-bouquet",
+    name: "Sunshine Bouquet",
+    price: 180,
+    category: "Single Flower Bouquets",
+
+    description:
+      "A bright handmade crochet sunflower bouquet, perfect as a small thoughtful gift.",
+
+    images: [
+      "assets/images/sunshine-bouquet.jpg"
+    ],
+
+    customization: [
+      "Add a personalised note"
+    ],
+
+    availability: true,
+    collection: "Bestsellers"
+  },
+
+   {
+    id: "blooming-rainbow-bouquet",
+    name: "Blooming Rainbow Bouquet",
+    price: 2300,
+    category: "Bouquets",
+
+    description:
+      "Handmade Crochet Bouquet: A beautiful handmade crochet bouquet featuring 1 lily, 2 lavender stems, 2 sunflowers, 5 roses, and 7 tulips. Perfect for birthdays, anniversaries, or a thoughtful gift for someone special. Each flower is crafted with love to create a long-lasting keepsake.",
+
+    images: [
+      "assets/images/blooming-rainbow-bouquet.jpg",
+      "assets/images/blooming-rainbow-bouquet1.jpg",
+      "assets/images/blooming-rainbow-bouquet2.jpg"
+    ],
+
+    customization: [
+      "Add a personalised note"
+    ],
+
+    availability: true,
+    collection: "Premium Bouquet"
+  },
+
+
+
+  /* =======================================================
+     CROCHET KEYCHAINS
+     ======================================================= */
+
+  {
+    id: "sweetheart-keychain",
+    name: "Sweetheart",
+    price: 100,
+    category: "Crochet Keychains",
+
+    description:
+      "A cute handmade crochet heart keychain, perfect for keys, bags and thoughtful little gifts.",
+
+    images: [
+      "assets/images/sweetheart-keychain.jpg",
+      "assets/images/sweetheart-keychain1.jpg",
+    ],
+
+    customization: [
+      "Choose colour",
+      "Custom colour combination available"
+    ],
+
+    availability: true,
+    collection: "Bestsellers"
+  },
+
+
+  {
+    id: "fish-cake-keychain",
+    name: "Fish Cake",
+    price: 130,
+    category: "Crochet Keychains",
+
+    description:
+      "A cheerful handmade crochet fish cake keychain.",
+
+    images: [
+      "assets/images/fish-cake-keychain.jpg"
+    ],
+
+    customization: [
+      "Choose colour combination"
+    ],
+
+    availability: true,
+    collection: "Bestsellers"
+  },
+
+
+  {
+    id: "tulip-twist-keychain",
+    name: "Tulip Twist",
+    price: 110,
+    category: "Crochet Keychains",
+
+    description:
+      "A delicate handmade crochet tulip keychain.",
+
+    images: [
+      "assets/images/tulip-twist-keychain.jpg",
+      "assets/images/tulip-twist-keychain2.jpg",
+    ],
+
+    customization: [
+      "Choose tulip colour"
+    ],
+
+    availability: true,
+    collection: "Bestsellers"
+  },
+
+
+  {
+    id: "rosie-bloom-keychain",
+    name: "Rosie Bloom",
+    price: 110,
+    category: "Crochet Keychains",
+
+    description:
+      "A beautiful handmade crochet rose keychain.",
+
+    images: [
+      "assets/images/rosie-bloom-keychain.jpg"
+    ],
+
+    customization: [
+      "Choose rose colour"
+    ],
+
+    availability: true,
+    collection: "Bestsellers"
+  },
+
+
+  {
+    id: "keychain-cherry",
+    name: "Crochet Cherry",
+    price: 120,
+    category: "Crochet Keychains",
+
+    description:
+      "A playful handmade crochet cherry keychain.",
+
+    images: [
+      "assets/images/keychain-cherry.jpg"
+    ],
+
+    customization: [
+      "Choose colour combination"
+    ],
+
+    availability: true,
+    collection: "Bestsellers"
+  },
+
+
+  {
+    id: "blossom-berry-keychain",
+    name: "Blossom Berry",
+    price: 150,
+    category: "Crochet Keychains",
+
+    description:
+      "A cute handmade crochet strawberry paired with a delicate white crochet flower.",
+
+    images: [
+      "assets/images/blossom-berry-keychain.jpg"
+    ],
+
+    customization: [
+
+    ],
+
+    availability: true,
+    collection: "Bestsellers"
+  },
+
+
+  {
+    id: "bat-stitch-keychain",
+    name: "Bat Stitch",
+    price: 120,
+    category: "Crochet Keychains",
+
+    description:
+      "A cute handmade crochet bat stitch keychain.",
+
+    images: [
+      "assets/images/bat-stitch-keychain.jpg"
+    ],
+
+    customization: [
+      "Choose colour"
+    ],
+
+    availability: true,
+    collection: "Bestsellers"
+  },
+
+
+  {
+    id: "tommy-tomato-keychain",
+    name: "Tommy Tomato",
+    price: 120,
+    category: "Crochet Keychains",
+
+    description:
+      "A fun handmade crochet tomato keychain.",
+
+    images: [
+      "assets/images/tommy-tomato-keychain.jpg"
+    ],
+
+    customization: [
+      "Choose colour combination"
+    ],
+
+    availability: true,
+    collection: "Bestsellers"
+  },
+
+
+  {
+    id: "white-sakura-keychain",
+    name: "White Sakura",
+    price: 120,
+    category: "Crochet Keychains",
+
+    description:
+      "A playful handmade crochet white flower keychain.",
+
+    images: [
+      "assets/images/white-sakura-keychain.jpg"
+    ],
+
+    customization: [
+      "Choose colour combination"
+    ],
+
+    availability: true,
+    collection: "Bestsellers"
+  },
+
+
+  {
+    id: "bluebell-keychain",
+    name: "Bluebell",
+    price: 120,
+    category: "Crochet Keychains",
+
+    description:
+      "A cute handmade crochet Bluebell keychain.",
+
+    images: [
+      "assets/images/bluebell-keychain.jpg"
+    ],
+
+    customization: [
+      "Choose colour combination"
+    ],
+
+    availability: true,
+    collection: "Bestsellers"
+  },
+
+
+  {
+    id: "cherry-petal-keychain",
+    name: "Cherry Petal",
+    price: 130,
+    category: "Crochet Keychains",
+
+    description:
+      "A bright handmade crochet cherry petal keychain.",
+
+    images: [
+      "assets/images/cherry-petal-keychain.jpg"
+    ],
+
+    customization: [
+      "Choose colour combination"
+    ],
+
+    availability: true,
+    collection: "Bestsellers"
+  },
+
+
+  {
+    id: "Daisy-dreamwrap-keychain",
+    name: "Daisy Dream Wrap",
+    price: 120,
+    category: "Crochet Keychains",
+
+    description:
+      "A tiny handmade crochet flower keychain.",
+
+    images: [
+      "assets/images/daisy-dreamwrap-keychain.jpg"
+    ],
+
+    customization: [
+      "Choose flower colour"
+    ],
+
+    availability: true,
+    collection: "Bestsellers"
+  },
+
+
+
+
+  {
+    id: "keychain-chocochip-cookie",
+    name: "Crochet Chocochip Cookie",
+    price: 150,
+    category: "Crochet Keychains",
+
+    description:
+      "A fun handmade crochet chocolate chip cookie keychain.",
+
+    images: [
+      "assets/images/keychain-chocochip-cookie.jpg"
+    ],
+
+    customization: [
+      "Choose colour combination"
+    ],
+
+    availability: true,
+    collection: "Bestsellers"
+  },
+
+
+  /* =======================================================
+     FUTURE PRODUCTS
+
+     COPY THIS BLOCK WHEN YOU ADD A NEW PRODUCT.
+
+     YOU CAN HAVE 50, 100 OR MORE PRODUCTS.
+
+     ======================================================= */
+
+  
+  {
+    id: "golden-sunshine-pot",
+    name: "Golden Sunshine Pot",
+    price: 400,
+    category: "Crochet Flower Pots",
+
+    description:
+      "A charming handmade crochet sunflower pot that adds a cheerful splash of sunshine and warmth to any space.",
+
+    images: [
+      "assets/images/golden-sunshine-pot.jpg",
+    ],
+
+    customization: [
+      "Choose colour",
+      "Add personalised note",
+      "NO. OF FLOWERS"
+    ],
+
+    availability: true,
+    collection: "Flower Pots"
+  },
+
+
+  {
+    id: "lilac-lily",
+    name: "Lilac lily",
+    price: 250,
+    category: "Single Flowers",
+
+    description:
+      "Delicate lilac crochet lilies, handcrafted to bring a dreamy touch of elegance to any moment.",
+
+    images: [
+      "assets/images/lilac-lily1.jpg",
+      "assets/images/lilac-lily2.jpg",
+    ],
+
+    customization: [
+      "Choose colour",
+      "Add personalised note",
+    ],
+
+    availability: true,
+    collection: "Bestsellers"
+  },
+
+
+   {
+    id: "ruby-tulip-wrap",
+    name: "Ruby Tulip Wrap",
+    price: 220,
+    category: "Single Flower Bouquets",
+
+    description:
+      "A beautifully wrapped ruby-red crochet tulip, perfect for expressing love through a thoughtful little gift.",
+
+    images: [
+      "assets/images/ruby-tulip-wrap-single-bouquet.jpg",
+      "assets/images/ruby-tulip-wrap-single-bouquet2.jpg",
+    ],
+
+    customization: [
+      "Choose colour",
+      "Add personalised note",
+    ],
+
+    availability: true,
+    collection: "Single Flower Bouquets"
+  },
+
+   {
+    id: "scarlet-bloom-single-bouquet",
+    name: "Scarlet Bloom",
+    price: 180,
+    category: "Single Flower Bouquets",
+
+    description:
+      "A striking scarlet crochet flower, lovingly handmade to make special moments unforgettable.",
+
+    images: [
+      "assets/images/scarlet-bloom-single-bouquet.jpg",
+      "assets/images/scarlet-bloom-single-bouquet2.jpg",
+    ],
+
+    customization: [
+      "Choose colour",
+      "Add personalised note",
+    ],
+
+    availability: true,
+    collection: "Bestselllers"
+   }, 
+    
+    {
+    id: "sunny-flower",
+    name: "Sunny FLower",
+    price: 250,
+    category: "Single Flowers",
+
+    description:
+      "A cheerful crochet bloom that brings a little sunshine, colour, and happiness wherever it goes.",
+
+    images: [
+      "assets/images/sunny-flower1.jpg",
+      "assets/images/sunny-flower2.jpg",
+    ],
+
+    customization: [
+      "Choose colour",
+      "Add personalised note",
+    ],
+
+    availability: true,
+    collection: "Bestsellers"
+  },
+
+  /*
+  {
+    id: "new-product-002",
+    name: "Another Product",
+    price: 499,
+    category: "Bouquets",
+
+    description:
+      "Product description here.",
+
+    images: [
+      "assets/images/another-product.jpg"
+    ],
+
+    customization: [
+      "Choose colour",
+      "Custom wrapping available"
+    ],
+
+    availability: true,
+    collection: "Season Special"
+  },
+  */
+
 ];
 
 
-/* =========================
-   STATE
-   ========================= */
+/* =========================================================
+   APPLICATION STATE
+   ========================================================= */
 
 let cart = [];
-let cartLineId = 0;
+
 let selectedProduct = null;
-let currentFilter = "all";
+
+let cartLineId = 0;
+
+let currentProducts = [...products];
+
+let currentImageIndex = 0;
 
 
-/* =========================
-   ELEMENTS
-   ========================= */
+/* =========================================================
+   DOM ELEMENTS
+   ========================================================= */
 
-const overlay = document.getElementById("overlay");
-const sidebar = document.getElementById("sidebar");
-const cartPanel = document.getElementById("cart-panel");
-const searchBar = document.getElementById("search-bar");
-const searchInput = document.getElementById("search-input");
+const grid =
+  document.getElementById("product-grid");
 
-const productGrid = document.getElementById("product-grid");
-const categoryMenu = document.getElementById("category-menu");
+const sidebar =
+  document.getElementById("sidebar");
 
-const listingTitle = document.getElementById("listing-title");
-const listingSubtitle = document.getElementById("listing-subtitle");
-const resultCount = document.getElementById("result-count");
+const overlay =
+  document.getElementById("overlay");
 
-const modal = document.getElementById("product-modal");
-const customFields = document.getElementById("custom-fields");
+const cartPanel =
+  document.getElementById("cart-panel");
 
+const modal =
+  document.getElementById("product-modal");
 
-/* =========================
-   BASIC SAFETY CHECK
-   ========================= */
+const modalImage =
+  document.getElementById("modal-image");
 
-if (!productGrid) {
-  console.error("product-grid was not found.");
-}
+const modalDots =
+  document.getElementById("gallery-dots");
 
-
-/* =========================
-   PANEL FUNCTIONS
-   ========================= */
-
-function openPanel(panel) {
-  if (!panel) return;
-
-  panel.classList.add("open");
-
-  if (overlay) {
-    overlay.classList.add("show");
-  }
-
-  document.body.classList.add("panel-open");
-}
+const customFields =
+  document.getElementById("custom-fields");
 
 
-function closePanels() {
-  if (sidebar) {
-    sidebar.classList.remove("open");
-  }
+/* =========================================================
+   INITIALIZATION
+   ========================================================= */
 
-  if (cartPanel) {
-    cartPanel.classList.remove("open");
-  }
+document.addEventListener("DOMContentLoaded", () => {
 
-  if (overlay) {
-    overlay.classList.remove("show");
-  }
+  renderCategories();
 
-  document.body.classList.remove("panel-open");
-}
+  renderProducts(products);
 
+  setupNavigation();
 
-function openSidebar() {
-  closePanels();
+  setupSearch();
 
-  if (sidebar) {
-    sidebar.classList.add("open");
-  }
+  setupCart();
 
-  if (overlay) {
-    overlay.classList.add("show");
-  }
+  setupModal();
 
-  document.body.classList.add("panel-open");
-}
+  setupQuantity();
 
+  setupSpecialButtons();
 
-function openCart() {
-  closePanels();
+  document.getElementById("instagram-link").href =
+    INSTAGRAM_URL;
 
-  if (cartPanel) {
-    cartPanel.classList.add("open");
-  }
-
-  if (overlay) {
-    overlay.classList.add("show");
-  }
-
-  document.body.classList.add("panel-open");
-
-  renderCart();
-}
-
-
-/* =========================
-   MENU
-   ========================= */
-
-const menuOpen = document.getElementById("menu-open");
-const menuClose = document.getElementById("menu-close");
-
-if (menuOpen) {
-  menuOpen.addEventListener("click", openSidebar);
-}
-
-if (menuClose) {
-  menuClose.addEventListener("click", closePanels);
-}
-
-if (overlay) {
-  overlay.addEventListener("click", closePanels);
-}
-
-
-/* =========================
-   CART OPEN / CLOSE
-   ========================= */
-
-const cartOpen = document.getElementById("cart-open");
-const cartClose = document.getElementById("cart-close");
-
-if (cartOpen) {
-  cartOpen.addEventListener("click", openCart);
-}
-
-if (cartClose) {
-  cartClose.addEventListener("click", closePanels);
-}
-
-
-/* =========================
-   ESCAPE KEY
-   ========================= */
-
-document.addEventListener("keydown", event => {
-  if (event.key === "Escape") {
-    closePanels();
-
-    if (modal && !modal.hidden) {
-      closeCustomizer();
-    }
-  }
 });
 
 
-/* =========================
-   SEARCH
-   ========================= */
+/* =========================================================
+   CATEGORY MENU
+   ========================================================= */
 
-const searchToggle = document.getElementById("search-toggle");
+function renderCategories() {
 
-if (searchToggle) {
-  searchToggle.addEventListener("click", () => {
-    if (!searchBar) return;
+  const menu =
+    document.getElementById("category-menu");
 
-    searchBar.hidden = !searchBar.hidden;
+  const categories =
+    [...new Set(products.map(product => product.category))];
 
-    if (!searchBar.hidden && searchInput) {
-      searchInput.focus();
-    }
+  menu.innerHTML = `
+    <button data-category="all">
+      All products
+    </button>
+  `;
+
+  categories.forEach(category => {
+
+    const button =
+      document.createElement("button");
+
+    button.dataset.category = category;
+
+    button.textContent = category;
+
+    menu.appendChild(button);
+
   });
-}
 
+  menu.querySelectorAll("[data-category]")
+    .forEach(button => {
 
-if (searchInput) {
-  searchInput.addEventListener("input", () => {
-    const query = searchInput.value.trim().toLowerCase();
+      button.addEventListener("click", () => {
 
-    if (!query) {
-      renderProducts(currentFilter);
-      return;
-    }
+        const category =
+          button.dataset.category;
 
-    const results = products.filter(product => {
-      return (
-        product.name.toLowerCase().includes(query) ||
-        product.category.toLowerCase().includes(query) ||
-        product.description.toLowerCase().includes(query)
-      );
+        closeSidebar();
+
+        if (category === "all") {
+
+          renderProducts(products);
+
+          updateListing(
+            "Explore our collections.",
+            "Find a little something to love."
+          );
+
+          return;
+        }
+
+        const filtered =
+          products.filter(
+            product => product.category === category
+          );
+
+        renderProducts(filtered);
+
+        updateListing(
+          category,
+          `Explore our ${category.toLowerCase()}.`
+        );
+
+      });
+
     });
 
-    renderProductList(results);
-  });
 }
 
 
-/* =========================
+/* =========================================================
    PRODUCT RENDERING
-   ========================= */
+   ========================================================= */
 
-function renderProducts(filter = "all") {
-  currentFilter = filter;
+function renderProducts(list) {
 
-  let filteredProducts = [...products];
+  currentProducts = [...list];
 
-  if (filter !== "all") {
-    filteredProducts = products.filter(product => {
-      return (
-        product.category === filter ||
-        product.collection === filter
-      );
-    });
-  }
+  const availableProducts =
+    list.filter(product => product.availability !== false);
 
-  renderProductList(filteredProducts);
-}
+  document.getElementById("result-count").textContent =
+    `${list.length} ${list.length === 1 ? "product" : "products"}`;
 
-
-function renderProductList(list) {
-  if (!productGrid) return;
+  document.getElementById("no-results").hidden =
+    list.length !== 0;
 
   if (!list.length) {
-    productGrid.innerHTML = `
-      <div class="empty-products">
-        <p>No products found.</p>
-        <button class="primary-btn" id="empty-view-all">
-          View all products
-        </button>
-      </div>
-    `;
 
-    const emptyButton = document.getElementById("empty-view-all");
-
-    if (emptyButton) {
-      emptyButton.addEventListener("click", () => {
-        renderProducts("all");
-      });
-    }
-
-    if (resultCount) {
-      resultCount.textContent = "0 products";
-    }
+    grid.innerHTML = "";
 
     return;
   }
 
-  productGrid.innerHTML = list.map(product => `
-    <article class="product-card">
+  grid.innerHTML =
+    list.map(product => createProductCard(product))
+      .join("");
 
-      <div class="product-image">
+
+  grid.querySelectorAll("[data-product]")
+    .forEach(card => {
+
+      card.addEventListener("click", event => {
+
+        if (event.target.closest("button")) {
+          return;
+        }
+
+        openCustomizer(card.dataset.product);
+
+      });
+
+    });
+
+
+  grid.querySelectorAll("[data-add]")
+    .forEach(button => {
+
+      button.addEventListener("click", event => {
+
+        event.stopPropagation();
+
+        openCustomizer(button.dataset.add);
+
+      });
+
+    });
+
+}
+
+
+function createProductCard(product) {
+
+  const image =
+    product.images && product.images.length
+      ? product.images[0]
+      : "";
+
+  const isAvailable =
+    product.availability !== false;
+
+  const imageHTML =
+    image
+      ? `
         <img
-          src="${product.image}"
+          src="${escapeHTML(image)}"
           alt="${escapeHTML(product.name)}"
           loading="lazy"
+          onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'; this.nextElementSibling.style.display='block';"
         >
+
+        <div class="placeholder-content"
+             style="display:none;">
+          <span>✿</span>
+          <small>Photo coming soon</small>
+        </div>
+      `
+      : `
+        <div class="placeholder-content">
+          <span>✿</span>
+          <small>Photo coming soon</small>
+        </div>
+      `;
+
+
+  const badge =
+    !isAvailable
+      ? `<div class="product-badge unavailable">Unavailable</div>`
+      : product.collection === "Premium Bouquet"
+        ? `<div class="product-badge">Premium</div>`
+        : "";
+
+
+  return `
+    <article
+      class="product-card"
+      data-product="${escapeHTML(product.id)}"
+    >
+
+      <div class="product-image">
+
+        ${imageHTML}
+
+        ${badge}
+
       </div>
 
       <div class="product-info">
 
-        <h3>${escapeHTML(product.name)}</h3>
+        <p class="eyebrow">
+          ${escapeHTML(product.category)}
+        </p>
 
-        <p>${escapeHTML(product.description)}</p>
+        <h3>
+          ${escapeHTML(product.name)}
+        </h3>
+
+        <p>
+          ${escapeHTML(product.description)}
+        </p>
 
         <div class="product-bottom">
 
-          <strong>
-            ${product.price == null
-              ? "Price to confirm"
-              : "₹" + product.price}
+          <strong class="product-price">
+            ${formatPrice(product.price)}
           </strong>
 
           <button
             class="order-button"
-            data-add="${product.id}"
-            type="button"
+            data-add="${escapeHTML(product.id)}"
+            ${!isAvailable ? "disabled" : ""}
           >
-            Customise ↗
+            ${isAvailable ? "View ↗" : "Unavailable"}
           </button>
 
         </div>
@@ -380,701 +976,366 @@ function renderProductList(list) {
       </div>
 
     </article>
-  `).join("");
+  `;
 
-  if (resultCount) {
-    resultCount.textContent =
-      `${list.length} ${list.length === 1 ? "product" : "products"}`;
-  }
-
-  productGrid.querySelectorAll("[data-add]").forEach(button => {
-    button.addEventListener("click", () => {
-      openCustomizer(button.dataset.add);
-    });
-  });
 }
 
 
-/* =========================
-   CATEGORY MENU
-   ========================= */
-
-function renderCategoryMenu() {
-  if (!categoryMenu) return;
-
-  const categories = [
-    "All products",
-    "Single Flower",
-    "Single Flower Bouquet",
-    "Crochet Bouquet",
-    "Crochet Flower Pot",
-    "Crochet Keychain",
-    "Accessories",
-    "Gifts"
-  ];
-
-  categoryMenu.innerHTML = categories.map(category => `
-    <button
-      type="button"
-      class="category-button"
-      data-category="${escapeHTML(category)}"
-    >
-      ${escapeHTML(category)}
-    </button>
-  `).join("");
-
-  categoryMenu.querySelectorAll("[data-category]").forEach(button => {
-    button.addEventListener("click", () => {
-      const category = button.dataset.category;
-
-      closePanels();
-
-      if (category === "All products") {
-        updateListingText(
-          "Explore our collections",
-          "Find a little something to love."
-        );
-
-        renderProducts("all");
-      } else {
-        updateListingText(
-          category,
-          "Handmade pieces created with love."
-        );
-
-        renderProducts(category);
-      }
-
-      scrollToShop();
-    });
-  });
-}
-
-
-/* =========================
-   SPECIAL COLLECTIONS
-   ========================= */
-
-document.querySelectorAll("[data-special]").forEach(button => {
-  button.addEventListener("click", () => {
-    const special = button.dataset.special;
-
-    closePanels();
-
-    updateListingText(
-      special,
-      "A carefully selected collection for you."
-    );
-
-    if (special === "Custom Orders") {
-      const customOrderButton =
-        document.getElementById("custom-order");
-
-      if (customOrderButton) {
-        customOrderButton.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
-      }
-
-      return;
-    }
-
-    renderProducts(special);
-    scrollToShop();
-  });
-});
-
-
-/* =========================
-   EXPLORE COLLECTION
-   ========================= */
-
-const exploreButton = document.getElementById("explore");
-
-if (exploreButton) {
-  exploreButton.addEventListener("click", () => {
-    closePanels();
-
-    updateListingText(
-      "Explore our collections",
-      "Find a little something to love."
-    );
-
-    renderProducts("all");
-    scrollToShop();
-  });
-}
-
-
-/* =========================
-   VIEW ALL
-   ========================= */
-
-const clearFilter = document.getElementById("clear-filter");
-
-if (clearFilter) {
-  clearFilter.addEventListener("click", () => {
-    updateListingText(
-      "Explore our collections",
-      "Find a little something to love."
-    );
-
-    if (searchInput) {
-      searchInput.value = "";
-    }
-
-    renderProducts("all");
-    scrollToShop();
-  });
-}
-
-
-/* =========================
-   LISTING TEXT
-   ========================= */
-
-function updateListingText(title, subtitle) {
-  if (listingTitle) {
-    listingTitle.innerHTML = escapeHTML(title);
-  }
-
-  if (listingSubtitle) {
-    listingSubtitle.textContent = subtitle;
-  }
-}
-
-
-/* =========================
-   SCROLL TO SHOP
-   ========================= */
-
-function scrollToShop() {
-  const shop = document.getElementById("shop");
-
-  if (shop) {
-    setTimeout(() => {
-      shop.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }, 100);
-  }
-}
-
-
-/* =========================
-   CUSTOMIZER
-   ========================= */
+/* =========================================================
+   PRODUCT CUSTOMIZER
+   ========================================================= */
 
 function openCustomizer(id) {
-  selectedProduct = products.find(
-    product => String(product.id) === String(id)
-  );
 
-  if (!selectedProduct || !modal) return;
+  selectedProduct =
+    products.find(product => product.id === id);
 
-  const modalTitle = document.getElementById("modal-title");
-  const modalDescription =
-    document.getElementById("modal-description");
-  const colourChoice =
-    document.getElementById("colour-choice");
-  const itemQuantity =
-    document.getElementById("item-quantity");
-  const itemNote =
-    document.getElementById("item-note");
-  const modalPrice =
-    document.getElementById("modal-price");
-
-  if (modalTitle) {
-    modalTitle.textContent = selectedProduct.name;
+  if (!selectedProduct) {
+    return;
   }
 
-  if (modalDescription) {
-    modalDescription.textContent =
-      selectedProduct.description;
+  if (selectedProduct.availability === false) {
+    return;
   }
 
-  if (colourChoice) {
-    colourChoice.value = "As shown / available";
-  }
+  currentImageIndex = 0;
 
-  if (itemQuantity) {
-    itemQuantity.value = 1;
-  }
+  document.getElementById("modal-category").textContent =
+    selectedProduct.category;
 
-  if (itemNote) {
-    itemNote.value = "";
-  }
+  document.getElementById("modal-title").textContent =
+    selectedProduct.name;
 
-  if (customFields) {
-    customFields.innerHTML = "";
-  }
+  document.getElementById("modal-description").textContent =
+    selectedProduct.description;
 
-  const cat = selectedProduct.category;
-
-  if (cat === "Single Flower") {
-    customFields.innerHTML = `
-      <label for="stem-length">Stem preference</label>
-
-      <select id="stem-length">
-        <option>Standard</option>
-        <option>Long stem (confirm availability)</option>
-      </select>
-    `;
-  }
+  document.getElementById("modal-price").textContent =
+    formatPrice(selectedProduct.price);
 
 
-  if (
-    cat === "Single Flower Bouquet" ||
-    cat === "Crochet Bouquet"
-  ) {
-    customFields.innerHTML = `
-      <label for="flower-count">
-        Number of flowers
-      </label>
+  document.getElementById("colour-choice").value =
+    "As shown / available";
 
-      <select id="flower-count">
-        <option value="3">3 flowers</option>
-        <option value="5">5 flowers</option>
-        <option value="7">7 flowers</option>
-        <option value="10">10 flowers</option>
-        <option value="Custom">Custom quantity</option>
-      </select>
+  document.getElementById("item-quantity").value =
+    1;
 
-      <label for="wrapping-choice">
-        Wrapping
-      </label>
-
-      <select id="wrapping-choice">
-        <option>Standard wrapping</option>
-        <option>
-          Premium wrapping (price to confirm)
-        </option>
-        <option>
-          Discuss custom wrapping
-        </option>
-      </select>
-
-      <label for="bouquet-mix">
-        Flower arrangement
-      </label>
-
-      <select id="bouquet-mix">
-        <option>Same flower</option>
-        <option>Mixed flowers</option>
-        <option>
-          Discuss a custom arrangement
-        </option>
-      </select>
-    `;
-  }
+  document.getElementById("item-note").value =
+    "";
 
 
-  if (cat === "Crochet Flower Pot") {
-    customFields.innerHTML = `
-      <label for="pot-size">
-        Arrangement
-      </label>
+  renderCustomizationFields();
 
-      <select id="pot-size">
-        <option>Single flower</option>
-        <option>Double flower</option>
-      </select>
-
-      <label for="pot-style">
-        Pot colour / style
-      </label>
-
-      <input
-        id="pot-style"
-        placeholder="Preferred colour or style"
-      >
-    `;
-  }
-
-
-  if (cat === "Crochet Keychain") {
-    customFields.innerHTML = `
-      <label for="keychain-addon">
-        Optional add-on
-      </label>
-
-      <select id="keychain-addon">
-
-        <option value="None">
-          No add-on
-        </option>
-
-        <option value="White crochet flower">
-          White crochet flower
-          (price to confirm)
-        </option>
-
-      </select>
-    `;
-
-    const addon =
-      document.getElementById("keychain-addon");
-
-    if (
-      addon &&
-      selectedProduct.name !==
-        "Strawberry with White Flower"
-    ) {
-      const option = addon.querySelectorAll("option")[1];
-
-      if (option) {
-        option.disabled =
-          !selectedProduct.name
-            .toLowerCase()
-            .includes("strawberry");
-      }
-    }
-  }
-
-
-  if (modalPrice) {
-    modalPrice.textContent =
-      selectedProduct.price == null
-        ? "Price to be confirmed"
-        : "₹" + selectedProduct.price;
-  }
+  renderGallery();
 
   modal.hidden = false;
+
+  document.body.classList.add("no-scroll");
+
 }
 
-
-/* =========================
-   CLOSE CUSTOMIZER
-   ========================= */
 
 function closeCustomizer() {
-  if (!modal) return;
 
   modal.hidden = true;
+
   selectedProduct = null;
+
+  document.body.classList.remove("no-scroll");
+
 }
 
 
-const modalClose =
-  document.getElementById("modal-close");
+function renderCustomizationFields() {
 
-if (modalClose) {
-  modalClose.addEventListener(
-    "click",
-    closeCustomizer
-  );
+  if (!selectedProduct) {
+    return;
+  }
+
+  const options =
+    selectedProduct.customization || [];
+
+  if (!options.length) {
+
+    customFields.innerHTML = "";
+
+    return;
+  }
+
+  customFields.innerHTML = `
+    <div class="modal-customization">
+
+      <strong>
+        CUSTOMISATION AVAILABLE
+      </strong>
+
+      <ul>
+        ${options.map(option =>
+          `<li>${escapeHTML(option)}</li>`
+        ).join("")}
+      </ul>
+
+    </div>
+  `;
+
 }
 
 
-if (modal) {
-  modal.addEventListener("click", event => {
-    if (event.target === modal) {
-      closeCustomizer();
-    }
-  });
+/* =========================================================
+   PRODUCT GALLERY
+   ========================================================= */
+
+function renderGallery() {
+
+  if (!selectedProduct) {
+    return;
+  }
+
+  const images =
+    selectedProduct.images || [];
+
+  if (!images.length) {
+
+    modalImage.style.display = "none";
+
+    document.querySelector(".modal-image-area")
+      .classList.add("placeholder");
+
+    modalDots.innerHTML = "";
+
+    return;
+  }
+
+  modalImage.style.display = "block";
+
+  document.querySelector(".modal-image-area")
+    .classList.remove("placeholder");
+
+  showGalleryImage();
+
 }
 
 
-/* =========================
-   ADD CUSTOMISED PRODUCT
-   ========================= */
+function showGalleryImage() {
 
-const addCustomised =
-  document.getElementById("add-customised");
+  const images =
+    selectedProduct.images || [];
 
-if (addCustomised) {
-  addCustomised.addEventListener("click", () => {
+  if (!images.length) {
+    return;
+  }
 
-    if (!selectedProduct) return;
+  const image =
+    images[currentImageIndex];
 
-    const quantityInput =
-      document.getElementById("item-quantity");
+  modalImage.src = image;
 
-    const qty = Number(
-      quantityInput ? quantityInput.value : 1
-    );
-
-    if (
-      !Number.isInteger(qty) ||
-      qty < 1 ||
-      qty > 20
-    ) {
-      alert(
-        "Please select a quantity between 1 and 20."
-      );
-      return;
-    }
+  modalImage.alt =
+    `${selectedProduct.name} image ${currentImageIndex + 1}`;
 
 
-    const colourElement =
-      document.getElementById("colour-choice");
+  modalImage.onerror = () => {
 
-    const noteElement =
-      document.getElementById("item-note");
+    modalImage.style.display = "none";
 
-
-    const options = {
-      colour: colourElement
-        ? colourElement.value
-        : "As shown / available",
-
-      quantity: qty,
-
-      note: noteElement
-        ? noteElement.value.trim()
-        : ""
-    };
+  };
 
 
-    const stem =
-      document.getElementById("stem-length");
-
-    const flowerCount =
-      document.getElementById("flower-count");
-
-    const wrapping =
-      document.getElementById("wrapping-choice");
-
-    const mix =
-      document.getElementById("bouquet-mix");
-
-    const potSize =
-      document.getElementById("pot-size");
-
-    const potStyle =
-      document.getElementById("pot-style");
-
-    const addon =
-      document.getElementById("keychain-addon");
+  modalDots.innerHTML =
+    images.map((_, index) => `
+      <button
+        class="gallery-dot ${index === currentImageIndex ? "active" : ""}"
+        data-gallery-index="${index}"
+        aria-label="View image ${index + 1}">
+      </button>
+    `).join("");
 
 
-    if (stem) {
-      options.stem = stem.value;
-    }
+  modalDots.querySelectorAll("[data-gallery-index]")
+    .forEach(dot => {
 
-    if (flowerCount) {
-      options.flowerCount = flowerCount.value;
-    }
+      dot.addEventListener("click", () => {
 
-    if (wrapping) {
-      options.wrapping = wrapping.value;
-    }
+        currentImageIndex =
+          Number(dot.dataset.galleryIndex);
 
-    if (mix) {
-      options.arrangement = mix.value;
-    }
+        showGalleryImage();
 
-    if (potSize) {
-      options.potSize = potSize.value;
-    }
+      });
 
-    if (potStyle) {
-      options.potStyle = potStyle.value;
-    }
-
-    if (addon) {
-      options.addon = addon.value;
-    }
-
-
-    cart.push({
-      ...selectedProduct,
-      lineId: ++cartLineId,
-      qty,
-      options
     });
 
 
-    renderCart();
+  const hasMultiple =
+    images.length > 1;
 
-    closeCustomizer();
+  document.getElementById("gallery-prev").style.display =
+    hasMultiple ? "block" : "none";
 
-    openCart();
-  });
+  document.getElementById("gallery-next").style.display =
+    hasMultiple ? "block" : "none";
+
 }
 
 
-/* =========================
-   CART RENDER
-   ========================= */
+/* =========================================================
+   ADD TO CART
+   ========================================================= */
+
+function addSelectedProductToCart() {
+
+  if (!selectedProduct) {
+    return;
+  }
+
+  const quantity =
+    Number(
+      document.getElementById("item-quantity").value
+    );
+
+  if (
+    !Number.isInteger(quantity) ||
+    quantity < 1 ||
+    quantity > 20
+  ) {
+
+    alert(
+      "Please select a quantity between 1 and 20."
+    );
+
+    return;
+  }
+
+
+  const options = {
+
+    colour:
+      document.getElementById("colour-choice").value,
+
+    note:
+      document.getElementById("item-note")
+        .value
+        .trim()
+
+  };
+
+
+  cart.push({
+
+    ...selectedProduct,
+
+    lineId:
+      ++cartLineId,
+
+    qty:
+      quantity,
+
+    options
+
+  });
+
+
+  renderCart();
+
+  closeCustomizer();
+
+  openCart();
+
+}
+
+
+/* =========================================================
+   CART
+   ========================================================= */
 
 function renderCart() {
 
-  const cartCount =
-    document.getElementById("cart-count");
+  const count =
+    cart.reduce(
+      (sum, item) => sum + item.qty,
+      0
+    );
 
-  const cartItems =
+  document.getElementById("cart-count")
+    .textContent = count;
+
+
+  const container =
     document.getElementById("cart-items");
-
-  const cartTotal =
-    document.getElementById("cart-total");
-
-
-  const totalQuantity = cart.reduce(
-    (sum, product) => sum + product.qty,
-    0
-  );
-
-
-  if (cartCount) {
-    cartCount.textContent = totalQuantity;
-  }
-
-
-  if (!cartItems) return;
 
 
   if (!cart.length) {
 
-    cartItems.innerHTML =
-      "<p>Your bag is empty.</p>";
+    container.innerHTML = `
+      <div class="empty-cart">
+
+        <span>♡</span>
+
+        <p>Your bag is empty.</p>
+
+        <small>
+          Add something handmade to get started.
+        </small>
+
+      </div>
+    `;
 
   } else {
 
-    cartItems.innerHTML = cart.map(product => {
+    container.innerHTML =
+      cart.map(item => `
 
-      return `
         <div class="cart-item">
 
           <div>
 
             <strong>
-              ${escapeHTML(product.name)}
+              ${escapeHTML(item.name)}
             </strong>
 
             <p>
-              Qty: ${product.qty}
-              · ${escapeHTML(product.options.colour)}
+              Qty: ${item.qty}
+            </p>
+
+            <p>
+              Colour: ${escapeHTML(item.options.colour)}
             </p>
 
             ${
-              product.options.flowerCount
-                ? `<p>
-                    Flowers:
-                    ${escapeHTML(
-                      product.options.flowerCount
-                    )}
-                  </p>`
-                : ""
-            }
-
-            ${
-              product.options.wrapping
-                ? `<p>
-                    Wrapping:
-                    ${escapeHTML(
-                      product.options.wrapping
-                    )}
-                  </p>`
-                : ""
-            }
-
-            ${
-              product.options.arrangement
-                ? `<p>
-                    Arrangement:
-                    ${escapeHTML(
-                      product.options.arrangement
-                    )}
-                  </p>`
-                : ""
-            }
-
-            ${
-              product.options.potSize
-                ? `<p>
-                    Pot:
-                    ${escapeHTML(
-                      product.options.potSize
-                    )}
-                  </p>`
-                : ""
-            }
-
-            ${
-              product.options.potStyle
-                ? `<p>
-                    Pot style:
-                    ${escapeHTML(
-                      product.options.potStyle
-                    )}
-                  </p>`
-                : ""
-            }
-
-            ${
-              product.options.stem
-                ? `<p>
-                    Stem:
-                    ${escapeHTML(
-                      product.options.stem
-                    )}
-                  </p>`
-                : ""
-            }
-
-            ${
-              product.options.addon
-                ? `<p>
-                    Add-on:
-                    ${escapeHTML(
-                      product.options.addon
-                    )}
-                  </p>`
-                : ""
-            }
-
-            ${
-              product.options.note
-                ? `<p>
-                    Note:
-                    ${escapeHTML(
-                      product.options.note
-                    )}
-                  </p>`
+              item.options.note
+                ? `<p>Note: ${escapeHTML(item.options.note)}</p>`
                 : ""
             }
 
             <p>
-              ${
-                product.price == null
-                  ? "Price to be confirmed"
-                  : "₹" +
-                    product.price *
-                      product.qty
-              }
+              ${formatPrice(item.price * item.qty)}
             </p>
 
           </div>
 
           <button
-            type="button"
-            data-remove="${product.lineId}"
-          >
+            class="remove-btn"
+            data-remove="${item.lineId}">
             Remove
           </button>
 
         </div>
-      `;
 
-    }).join("");
+      `).join("");
 
 
-    cartItems
+    container
       .querySelectorAll("[data-remove]")
       .forEach(button => {
 
         button.addEventListener("click", () => {
 
-          const lineId =
+          const id =
             Number(button.dataset.remove);
 
-          cart = cart.filter(
-            product =>
-              product.lineId !== lineId
-          );
+          cart =
+            cart.filter(
+              item => item.lineId !== id
+            );
 
           renderCart();
 
@@ -1085,194 +1346,642 @@ function renderCart() {
   }
 
 
-  const hasUnknownPrice =
-    cart.some(
-      product => product.price == null
+  const total =
+    cart.reduce(
+      (sum, item) =>
+        sum + (Number(item.price) || 0) * item.qty,
+      0
     );
 
 
-  const total = cart.reduce(
-    (sum, product) =>
-      sum +
-      (product.price || 0) *
-      product.qty,
-    0
-  );
+  document.getElementById("cart-total")
+    .textContent =
+      formatPrice(total);
 
-
-  if (cartTotal) {
-
-    cartTotal.textContent =
-      hasUnknownPrice
-        ? "Final price to be confirmed"
-        : "₹" + total;
-
-  }
 }
 
 
-/* =========================
+/* =========================================================
    WHATSAPP CHECKOUT
-   ========================= */
+   ========================================================= */
 
-const checkout =
-  document.getElementById("checkout");
+function checkoutWhatsApp() {
 
-if (checkout) {
+  if (!cart.length) {
 
-  checkout.addEventListener("click", () => {
+    alert(
+      "Your bag is empty. Add something handmade first."
+    );
 
-    if (!cart.length) {
-
-      alert("Your bag is empty.");
-
-      return;
-    }
+    return;
+  }
 
 
-    const lines = cart.map(product => {
+  const lines =
+    cart.map(item => {
 
       const details = [
 
-        `Product: ${product.name}`,
+        `Product: ${item.name}`,
 
-        `Quantity: ${product.qty}`,
+        `Quantity: ${item.qty}`,
 
-        `Colour: ${product.options.colour}`,
+        `Colour: ${item.options.colour}`,
 
-        product.options.stem &&
-          `Stem: ${product.options.stem}`,
+        item.options.note
+          ? `Note: ${item.options.note}`
+          : "",
 
-        product.options.flowerCount &&
-          `Flower count: ${product.options.flowerCount}`,
-
-        product.options.wrapping &&
-          `Wrapping: ${product.options.wrapping}`,
-
-        product.options.arrangement &&
-          `Arrangement: ${product.options.arrangement}`,
-
-        product.options.potSize &&
-          `Pot: ${product.options.potSize}`,
-
-        product.options.potStyle &&
-          `Pot style: ${product.options.potStyle}`,
-
-        product.options.addon &&
-          `Add-on: ${product.options.addon}`,
-
-        product.options.note &&
-          `Note: ${product.options.note}`,
-
-        `Price: ${
-          product.price == null
-            ? "To be confirmed"
-            : "₹" +
-              product.price *
-                product.qty
-        }`
+        `Price: ${formatPrice(item.price * item.qty)}`
 
       ].filter(Boolean);
+
 
       return details.join("\n");
 
     });
 
 
-    const message =
-      `Hello ${BRAND}! I'd like to enquire about this order:\n\n` +
-      lines.join("\n\n") +
-      "\n\nPlease confirm the final price, availability, delivery charges and payment details.";
+  const total =
+    cart.reduce(
+      (sum, item) =>
+        sum + (Number(item.price) || 0) * item.qty,
+      0
+    );
 
 
-    sendWhatsApp(message);
+  const message =
+    `Hello ${BRAND}! I'd like to enquire about this order:\n\n` +
 
-  });
+    lines.join("\n\n") +
+
+    `\n\nTotal shown: ${formatPrice(total)}` +
+
+    `\n\nPlease confirm the final price, availability, delivery charges and payment details.`;
+
+
+  sendWhatsApp(message);
 
 }
 
 
-/* =========================
-   WHATSAPP FUNCTION
-   ========================= */
+/* =========================================================
+   CUSTOM ORDER
+   ========================================================= */
+
+function customOrderWhatsApp() {
+
+  const message =
+    `Hello ${BRAND}! I'd like to request a custom crochet order.\n\n` +
+    `I'd like to discuss the design, colours, size, quantity and pricing.`;
+
+  sendWhatsApp(message);
+
+}
+
+
+/* =========================================================
+   SEND WHATSAPP
+   ========================================================= */
 
 function sendWhatsApp(message) {
 
   const url =
-    `https://wa.me/${whatsappNumber}?text=` +
-    encodeURIComponent(message);
+    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
   window.open(
     url,
     "_blank",
     "noopener,noreferrer"
   );
+
 }
 
 
-/* =========================
-   CUSTOM ORDER
-   ========================= */
+/* =========================================================
+   SEARCH
+   ========================================================= */
 
-const customOrder =
-  document.getElementById("custom-order");
+function setupSearch() {
 
-if (customOrder) {
+  const searchToggle =
+    document.getElementById("search-toggle");
 
-  customOrder.addEventListener("click", () => {
+  const searchBar =
+    document.getElementById("search-bar");
 
-    const message =
-      `Hello ${BRAND}! I'd like to request a custom crochet order.\n\n` +
-      `I'd like to discuss the colour, flower/bouquet style, quantity and design.`;
+  const searchInput =
+    document.getElementById("search-input");
 
-    sendWhatsApp(message);
+  const searchClose =
+    document.getElementById("search-close");
+
+
+  searchToggle.addEventListener("click", () => {
+
+    searchBar.hidden =
+      !searchBar.hidden;
+
+    if (!searchBar.hidden) {
+
+      searchInput.focus();
+
+    }
+
+  });
+
+
+  searchClose.addEventListener("click", () => {
+
+    searchBar.hidden = true;
+
+    searchInput.value = "";
+
+    renderProducts(products);
+
+  });
+
+
+  searchInput.addEventListener("input", () => {
+
+    const query =
+      searchInput.value
+        .trim()
+        .toLowerCase();
+
+
+    if (!query) {
+
+      renderProducts(products);
+
+      updateListing(
+        "Explore our collections.",
+        "Find a little something to love."
+      );
+
+      return;
+
+    }
+
+
+    const results =
+      products.filter(product => {
+
+        const searchable =
+          [
+            product.name,
+            product.category,
+            product.description,
+            product.collection
+          ]
+          .join(" ")
+          .toLowerCase();
+
+        return searchable.includes(query);
+
+      });
+
+
+    renderProducts(results);
+
+    updateListing(
+      `Search: "${searchInput.value}"`,
+      `${results.length} matching ${results.length === 1 ? "product" : "products"}.`
+    );
 
   });
 
 }
 
 
-/* =========================
-   FOOTER INSTAGRAM
-   ========================= */
+/* =========================================================
+   SPECIAL COLLECTIONS
+   ========================================================= */
 
-const instagramLink =
-  document.getElementById("instagram-link");
+function setupSpecialButtons() {
 
-if (instagramLink) {
-  instagramLink.href = instagramURL;
-}
+  document.querySelectorAll("[data-special]")
+    .forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const special =
+          button.dataset.special;
+
+        closeSidebar();
+
+        if (special === "Custom Orders") {
+
+          customOrderWhatsApp();
+
+          return;
+
+        }
 
 
-/* =========================
-   BRAND LINK
-   ========================= */
+        const filtered =
+          products.filter(
+            product =>
+              product.collection === special
+          );
 
-document.querySelectorAll("#brand").forEach(link => {
 
-  link.addEventListener("click", event => {
+        renderProducts(filtered);
 
-    event.preventDefault();
 
-    closePanels();
+        updateListing(
+          special,
+          `Explore our ${special.toLowerCase()}.`
+        );
 
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+
+        document.getElementById("shop")
+          .scrollIntoView({
+            behavior: "smooth"
+          });
+
+      });
+
     });
 
-  });
-
-});
+}
 
 
-/* =========================
-   ESCAPE HTML
-   ========================= */
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+function setupNavigation() {
+
+  document
+    .getElementById("menu-open")
+    .addEventListener("click", openSidebar);
+
+
+  document
+    .getElementById("menu-close")
+    .addEventListener("click", closeSidebar);
+
+
+  overlay.addEventListener(
+    "click",
+    closeEverything
+  );
+
+
+  document
+    .getElementById("explore")
+    .addEventListener("click", () => {
+
+      renderProducts(products);
+
+      updateListing(
+        "Explore our collections.",
+        "Find a little something to love."
+      );
+
+      document.getElementById("shop")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    });
+
+
+  document
+    .getElementById("clear-filter")
+    .addEventListener("click", () => {
+
+      renderProducts(products);
+
+      updateListing(
+        "Explore our collections.",
+        "Find a little something to love."
+      );
+
+      document.getElementById("shop")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    });
+
+
+  document
+    .getElementById("no-results-reset")
+    .addEventListener("click", () => {
+
+      renderProducts(products);
+
+      updateListing(
+        "Explore our collections.",
+        "Find a little something to love."
+      );
+
+    });
+
+
+  document
+    .getElementById("custom-order")
+    .addEventListener(
+      "click",
+      customOrderWhatsApp
+    );
+
+
+  document
+    .getElementById("brand")
+    .addEventListener("click", event => {
+
+      event.preventDefault();
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    });
+
+}
+
+
+function openSidebar() {
+
+  sidebar.classList.add("open");
+
+  overlay.classList.add("active");
+
+  document.body.classList.add("no-scroll");
+
+}
+
+
+function closeSidebar() {
+
+  sidebar.classList.remove("open");
+
+  overlay.classList.remove("active");
+
+  document.body.classList.remove("no-scroll");
+
+}
+
+
+function openCart() {
+
+  cartPanel.classList.add("open");
+
+  overlay.classList.add("active");
+
+  document.body.classList.add("no-scroll");
+
+}
+
+
+function closeCart() {
+
+  cartPanel.classList.remove("open");
+
+  overlay.classList.remove("active");
+
+  document.body.classList.remove("no-scroll");
+
+}
+
+
+function closeEverything() {
+
+  closeSidebar();
+
+  closeCart();
+
+}
+
+
+/* =========================================================
+   CART SETUP
+   ========================================================= */
+
+function setupCart() {
+
+  document
+    .getElementById("cart-open")
+    .addEventListener(
+      "click",
+      openCart
+    );
+
+
+  document
+    .getElementById("cart-close")
+    .addEventListener(
+      "click",
+      closeCart
+    );
+
+
+  document
+    .getElementById("checkout")
+    .addEventListener(
+      "click",
+      checkoutWhatsApp
+    );
+
+
+  renderCart();
+
+}
+
+
+/* =========================================================
+   MODAL SETUP
+   ========================================================= */
+
+function setupModal() {
+
+  document
+    .getElementById("modal-close")
+    .addEventListener(
+      "click",
+      closeCustomizer
+    );
+
+
+  modal.addEventListener(
+    "click",
+    event => {
+
+      if (
+        event.target === modal
+      ) {
+
+        closeCustomizer();
+
+      }
+
+    }
+  );
+
+
+  document
+    .getElementById("add-customised")
+    .addEventListener(
+      "click",
+      addSelectedProductToCart
+    );
+
+
+  document
+    .getElementById("gallery-prev")
+    .addEventListener(
+      "click",
+      () => {
+
+        if (!selectedProduct) return;
+
+        const length =
+          selectedProduct.images.length;
+
+        currentImageIndex =
+          (currentImageIndex - 1 + length) % length;
+
+        showGalleryImage();
+
+      }
+    );
+
+
+  document
+    .getElementById("gallery-next")
+    .addEventListener(
+      "click",
+      () => {
+
+        if (!selectedProduct) return;
+
+        const length =
+          selectedProduct.images.length;
+
+        currentImageIndex =
+          (currentImageIndex + 1) % length;
+
+        showGalleryImage();
+
+      }
+    );
+
+
+  document.addEventListener(
+    "keydown",
+    event => {
+
+      if (event.key === "Escape") {
+
+        closeCustomizer();
+
+        closeEverything();
+
+      }
+
+
+      if (
+        selectedProduct &&
+        event.key === "ArrowLeft"
+      ) {
+
+        document
+          .getElementById("gallery-prev")
+          .click();
+
+      }
+
+
+      if (
+        selectedProduct &&
+        event.key === "ArrowRight"
+      ) {
+
+        document
+          .getElementById("gallery-next")
+          .click();
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   QUANTITY
+   ========================================================= */
+
+function setupQuantity() {
+
+  const input =
+    document.getElementById("item-quantity");
+
+
+  document
+    .getElementById("quantity-minus")
+    .addEventListener("click", () => {
+
+      const value =
+        Number(input.value);
+
+      input.value =
+        Math.max(1, value - 1);
+
+    });
+
+
+  document
+    .getElementById("quantity-plus")
+    .addEventListener("click", () => {
+
+      const value =
+        Number(input.value);
+
+      input.value =
+        Math.min(20, value + 1);
+
+    });
+
+}
+
+
+/* =========================================================
+   LISTING TITLE
+   ========================================================= */
+
+function updateListing(title, subtitle) {
+
+  document.getElementById("listing-title")
+    .innerHTML =
+      escapeHTML(title);
+
+  document.getElementById("listing-subtitle")
+    .textContent =
+      subtitle;
+
+}
+
+
+/* =========================================================
+   HELPERS
+   ========================================================= */
+
+function formatPrice(price) {
+
+  return `₹${Number(price || 0).toLocaleString("en-IN")}`;
+
+}
+
 
 function escapeHTML(value) {
 
-  return String(value)
+  return String(value ?? "")
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
@@ -1280,18 +1989,3 @@ function escapeHTML(value) {
     .replace(/'/g, "&#039;");
 
 }
-
-
-/* =========================
-   INITIALISE WEBSITE
-   ========================= */
-
-renderCategoryMenu();
-
-renderProducts("all");
-
-renderCart();
-
-console.log(
-  "CROCHET Studio JavaScript loaded successfully."
-);
